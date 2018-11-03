@@ -22,29 +22,35 @@
        
 
     </head>
-    <body onload="init()">
+    <body>
 
         <!--Nav-->
 
-        <nav class="navbar navbar-expand-xl navbar-dark" style="background-color:#03a9f4;">
-            <a class="navbar-brand" href="#">Book Share</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <nav class="navbar navbar-expand-lg navbar-dark"  style="background-color:#03a9f4;">
+            <div class="container">
+                <a class="navbar-brand" href="#">BookShare</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <form class="form-inline ">
+                        <input class="form-control" type="text" placeholder="Search">
+                    </form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">About Us
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Login
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
 
-            <div class="collapse navbar-collapse" id="navbarsExample06">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                   
-                   
-                </ul>
-                <form class="form-inline my-2 my-md-0">
-                    <input class="form-control" type="text" placeholder="Search">
-                </form>
+
+                    </ul>
+                </div>
+
             </div>
         </nav>

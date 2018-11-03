@@ -1,64 +1,70 @@
         
-<?php 
-    require_once'php/nav.php';
+<?php
+require_once'php/nav.php';
 ?>
 
 <!--Page Content-->
 
 <div class="container">
+
     <div class="row">
-        <div class="col-lg-12 my-3">
-            <div class="pull-right">
-                <div class="btn-group">
-                    <h3>Borrow Books</h3>
-                    
-                </div>
+
+        <div class="col-lg-3">
+
+            <h1 class="my-4">Shop Name</h1>
+            <div class="list-group" id="tags">
+
             </div>
+
+
         </div>
-    </div> 
-</div>
 
+        <!-- /.col-lg-3 -->
 
-<div class="container">
-    <hr>
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="card">
-                <article class="card-group-item" >
-                    <header class="card-header">
-                        <h6 class="title">Categorys </h6>
-                    </header>
-                    <div class="filter-content">
-                        <div class="card-body">
-                            <form id="tags">
-                                !-- form-check.// -->
-                            </form>
+        <div class="col-lg-9">
 
-                        </div> <!-- card-body.// -->
+            <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
                     </div>
-                </article> <!-- card-group-item.// -->
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
 
-                
-            </div> <!-- card.// -->
-        </div>
-
-
-        <div class="col-sm-9 ">
-
-            <div id="products" class="row view-group">
-
-                
-                
-               
+            <div class="row" id="products">
 
 
             </div>
+            <!-- /.row -->
+
         </div>
-            
+        <!-- /.col-lg-9 -->
+
     </div>
-    </div>
+    <!-- /.row -->
+
+</div>
 
 
 <!-- Footer -->
 <?php
-    require_once'php/footer.php';
+require_once'php/footer.php';

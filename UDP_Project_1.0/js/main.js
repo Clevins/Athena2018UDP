@@ -3,48 +3,74 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results===null) {
+       return null;
+    }
+    return decodeURI(results[1]) || 0;
+};
 
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-
-function init(){
-
-    
+$(document).ready(function() {
     ajaxLoadData();
     ajaxLoadTags();
+    ajaxLoadBook($.urlParam('id'));
+    ajaxLoadSellers($.urlParam('id'));
+});
 
-}
+
 
 function ajaxLoadData() {
-   
+
     $.ajax({
-        type:"POST",
+        type: "POST",
         url: "php/loadHomeData.php",
         data: {data: "getAllBooks"}, // or function=two if you want the other to be called
-        dataType:"html",
-        success: function(result){
+        dataType: "html",
+        success: function (result) {
             $("#products").html(result);
         }
-        
+
     });
 
 }
 
-function ajaxLoadTags(){
+function ajaxLoadTags() {
     $.ajax({
-        type:"POST",
+        type: "POST",
         url: "php/loadHomeData.php",
         data: {data: "getAllTags"}, // or function=two if you want the other to be called
-        dataType:"html",
-        success: function(result){
-             $("#tags").html(result);
-            
+        dataType: "html",
+        success: function (result) {
+            $("#tags").html(result);
         }
-        
+
     });
 }
 
+
+
+
+function ajaxLoadBook(id){
+   $.ajax({
+        type: "POST",
+        url: "php/loadHomeData.php",
+        data: {data: "getBook",bookId: id}, // or function=two if you want the other to be called
+        dataType: "html",
+        success: function (result) {
+            $("#book").html(result);
+        }
+    });
+}
+
+function ajaxLoadSellers(id){
+   $.ajax({
+        type: "POST",
+        url: "php/loadHomeData.php",
+        data: {data: "getSellers",bookId: id}, // or function=two if you want the other to be called
+        dataType: "html",
+        success: function (result) {
+            $("#sellers").html(result);
+        }
+    });
+}
